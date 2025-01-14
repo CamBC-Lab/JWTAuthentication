@@ -10,6 +10,7 @@ export const login = async (req: Request, res: Response) => {
   const user = await User.findOne({
     where: { username },
   });
+  
   if (!user) {
     console.log('User not found');
     return res.status(401).json({ message: 'Authentication failed' });    
